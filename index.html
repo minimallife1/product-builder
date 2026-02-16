@@ -8,10 +8,29 @@
 </head>
 <body>
     <div class="container">
-        <h1>Lotto Number Generator</h1>
+        <div class="header-container">
+            <div class="theme-switch-container">
+                <input type="checkbox" id="theme-switch">
+                <label for="theme-switch" class="theme-switch-label">
+                    <span class="theme-switch-inner"></span>
+                    <span class="theme-switch-switch"></span>
+                </label>
+            </div>
+            <h1>Lotto Number Generator</h1>
+        </div>
         <div id="lotto-generator">
             <button id="generate-btn">Generate Numbers</button>
             <div id="results" class="results-container"></div>
+        </div>
+        
+        <div class="comments-section">
+            <h2>Comments</h2>
+            <form id="comment-form">
+                <input type="text" id="comment-name" placeholder="Name" required>
+                <textarea id="comment-text" placeholder="Leave a comment" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <ul id="comments-list"></ul>
         </div>
     </div>
     <script src="main.js"></script>

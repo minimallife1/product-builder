@@ -7,16 +7,24 @@ body {
     background-color: #f0f0f0;
     background-image: radial-gradient(#d7d7d7 1px, transparent 1px);
     background-size: 16px 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     text-align: center;
 }
 
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
 h1 {
     color: #333;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
 }
 
 #lotto-generator {
@@ -24,6 +32,7 @@ h1 {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
 }
 
 #generate-btn {
@@ -54,4 +63,189 @@ h1 {
     flex-wrap: wrap;
     margin-top: 2rem;
     gap: 1rem;
+}
+
+/* Theme Switcher */
+.theme-switch-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#theme-switch {
+    display: none;
+}
+
+.theme-switch-label {
+    display: block;
+    width: 60px;
+    height: 34px;
+    background: #ccc;
+    border-radius: 17px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-switch-label .theme-switch-inner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    border-radius: 17px;
+}
+
+.theme-switch-label .theme-switch-switch {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.3s;
+}
+
+#theme-switch:checked + .theme-switch-label {
+    background: #4CAF50;
+}
+
+#theme-switch:checked + .theme-switch-label .theme-switch-switch {
+    left: 30px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+}
+
+body.dark-mode h1 {
+    color: #f0f0f0;
+}
+
+body.dark-mode #lotto-generator {
+    background: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+body.dark-mode #generate-btn {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+body.dark-mode #generate-btn:hover {
+    background-color: #a96ef8;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 3rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.comments-section h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+#comment-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#comment-form button {
+    align-self: flex-end;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#comment-form button:hover {
+    background-color: #45a049;
+}
+
+#comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#comments-list li {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border-left: 5px solid #4CAF50;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#comments-list li strong {
+    color: #333;
+    transition: color 0.3s;
+}
+
+/* Dark Mode for Comments */
+body.dark-mode .comments-section {
+    background: #1e1e1e;
+}
+
+body.dark-mode .comments-section h2 {
+    color: #f0f0f0;
+}
+
+body.dark-mode #comment-form input,
+body.dark-mode #comment-form textarea {
+    background-color: #333;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode #comment-form button {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+body.dark-mode #comment-form button:hover {
+    background-color: #a96ef8;
+}
+
+body.dark-mode #comments-list li {
+    background-color: #333;
+    border-left-color: #bb86fc;
+    color: #f0f0f0;
+}
+
+body.dark-mode #comments-list li strong {
+    color: #bb86fc;
 }

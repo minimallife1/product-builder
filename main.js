@@ -51,7 +51,7 @@ generateBtn.addEventListener('click', () => {
     resultsContainer.innerHTML = '';
     const numbers = new Set();
 
-    while(numbers.size < 6) {
+    while(numbers.size < 10) { // Generate 10 numbers instead of 6
         const randomNumber = Math.floor(Math.random() * 45) + 1;
         numbers.add(randomNumber);
     }
@@ -62,5 +62,35 @@ generateBtn.addEventListener('click', () => {
             lottoBall.setAttribute('number', number);
             resultsContainer.appendChild(lottoBall);
         }, index * 100);
+    });
+});
+
+// Theme switcher logic
+document.addEventListener('DOMContentLoaded', () => {
+    const themeSwitch = document.getElementById('theme-switch');
+    const body = document.body;
+
+    themeSwitch.addEventListener('change', () => {
+        body.classList.toggle('dark-mode');
+    });
+
+    // Comment form logic
+    const commentForm = document.getElementById('comment-form');
+    const commentName = document.getElementById('comment-name');
+    const commentText = document.getElementById('comment-text');
+    const commentsList = document.getElementById('comments-list');
+
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = commentName.value;
+        const text = commentText.value;
+
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${name}:</strong> ${text}`;
+        commentsList.appendChild(li);
+
+        commentName.value = '';
+        commentText.value = '';
     });
 });
