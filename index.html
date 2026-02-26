@@ -1,38 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header-container">
-            <div class="theme-switch-container">
-                <input type="checkbox" id="theme-switch">
-                <label for="theme-switch" class="theme-switch-label">
-                    <span class="theme-switch-inner"></span>
-                    <span class="theme-switch-switch"></span>
-                </label>
-            </div>
-            <h1>Lotto Number Generator</h1>
-        </div>
-        <div id="lotto-generator">
-            <button id="generate-btn">Generate Numbers</button>
-            <div id="results" class="results-container"></div>
-        </div>
-        
-        <div class="comments-section">
-            <h2>Comments</h2>
-            <form id="comment-form">
-                <input type="text" id="comment-name" placeholder="Name" required>
-                <textarea id="comment-text" placeholder="Leave a comment" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <ul id="comments-list"></ul>
-        </div>
-    </div>
-    <script src="main.js"></script>
-</body>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>육아템 추천 서비스</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
